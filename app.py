@@ -24,8 +24,8 @@ def generate_summary(transcription):
     prompt = f"""
     You are an expert executive assistant. Your task is to provide a concise, professional summary of the following meeting transcript.
     Focus on the key decisions made, the main topics discussed, and the overall outcome.
-    Present the summary in three or more clear bullet points.
-
+    Give the summary so that anyone may understand what happened in the meeting. Present the summary
+    using 200-300 words in a bulleted list.
     Transcript:
     "{transcription}"
     """
@@ -47,9 +47,11 @@ def extract_action_items(transcript):
     """
     prompt = f"""
     You are a highly efficient project manager. Your goal is to extract all action items from the following meeting transcript.
-    For each action item, identify the task, the person responsible (Owner), and any mentioned deadline.
+    These action items include any tasks that have not been completed during the meeting, meant to be finsihed in the future.
+    For each action item, identify the task in detail, the person responsible (Owner), and any mentioned deadline.
     Present the action items in a Markdown table with the columns: 'Task', 'Owner', 'Deadline'.
-    If a detail like an Owner or Deadline is not mentioned, write 'Not specified'.
+    If a detail like an Owner or Deadline is not mentioned, write 'Not specified'. The list must have
+    enough context so a supervisor can easily understand who is responsible for what task.
 
     Transcript:
     "{transcript}"
