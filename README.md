@@ -6,8 +6,7 @@ This web application transcribes meeting audio, generates a concise summary, and
 
 ## Demo
 
-![Demo Screenshot](img_placeholder.png)
-*(**Note:** Replace with a screenshot of your app working successfully with a **shorter** audio file.)*
+![](Process.gif)
 
 **Important Limitation:** Currently, the summarization and action item extraction may fail or produce inconsistent results on very long audio files (e.g., over ~10-15 minutes) due to the context window limits of the local LLM. See the "Limitations" section below.
 
